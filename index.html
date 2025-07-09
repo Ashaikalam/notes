@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SAP Manual – MPV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+    }
+    nav {
+      background-color: #003366;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    nav a, .dropdown-btn {
+      color: #fff;
+      padding: 14px 16px;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+      position: relative;
+    }
+    nav a:hover, .dropdown-btn:hover {
+      background-color: #0059b3;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #0059b3;
+      min-width: 160px;
+      z-index: 1;
+      top: 48px;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #0073e6;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .container {
+      padding: 20px;
+    }
+    .step {
+      background: #fff;
+      border-left: 5px solid #5bc0de;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .step-title {
+      font-weight: bold;
+    }
+    .note {
+      background-color: #fcf8e3;
+      padding: 10px;
+      border-left: 4px solid #f0ad4e;
+      margin-top: 10px;
+    }
+    h1 {
+      color: #2e6da4;
+    }
+    @media screen and (max-width: 600px) {
+      nav a, .dropdown-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#">MPV</a>
+    <a href="#">PV</a>
+    <a href="#">LODGEMENT</a>
+    <div class="dropdown">
+      <div class="dropdown-btn">JV ▾</div>
+      <div class="dropdown-content">
+        <a href="#">FIXED JV</a>
+        <a href="#">RECLASS</a>
+        <a href="#">PAYROLL</a>
+      </div>
+    </div>
+    <a href="#">SD BILLING</a>
+    <a href="#">BANK CHARGES</a>
+    <div class="dropdown">
+      <div class="dropdown-btn">TAKEN UP INVOICES ▾</div>
+      <div class="dropdown-content">
+        <a href="#">INVOICE INTERCO</a>
+        <a href="#">VENDOR</a>
+        <a href="#">CREDIT NOTE</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Manual Payment Voucher (MPV) – SAP F-53</h1>
+
+    <div class="step">
+      <div class="step-title">Step 1: Access Transaction Code F-53</div>
+      <p>Click the <strong>MPV button</strong> from your SAP menu list, or type <strong>F-53</strong> in the command field and press Enter.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Step 2: Enter Company Code and Currency</div>
+      <p>Fill in the <strong>Company Code</strong> and choose the relevant <strong>Currency</strong>.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Step 3: Enter Document and Posting Date</div>
+      <p>Use the <strong>same date</strong as in the bank statement or payment voucher.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Step 4: Select Bank Account</div>
+      <p>Input the <strong>Bank GL Account</strong> (e.g., 110100) and any required <strong>house bank or account ID</strong>.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Step 5: Enter Amount</div>
+      <p>Fill in the <strong>amount to be paid</strong>.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Step 6: Process Open Items</div>
+      <p>Click <strong>Process Open Items</strong> → Select the invoice(s) you want to clear → Tick the checkbox.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Step 7: Add Reference & Remarks</div>
+      <p>Enter <strong>Reference Number</strong>, <strong>Document Text</strong>, and additional notes (e.g., Cheque No or Payment Reason).</p>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Step 8: Simulate</div>
+      <p>Click <strong>Simulate</strong> to preview the double entries and ensure that Debit and Credit match.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Step 9: Post Document</div>
+      <p>If correct, click <strong>Post</strong>. SAP will return a Document Number (e.g., 1900001234).</p>
+    </div>
+
+    <div class="step">
+      <div class="step-title">Step 10: View/Print Voucher (Optional)</div>
+      <p>Use T-code <strong>FB03</strong> to view the posted document. You may print or export it for filing.</p>
+    </div>
+  </div>
+
+</body>
+</html>
