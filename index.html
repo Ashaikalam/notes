@@ -2,22 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SAP Accounting Manual</title>
+  <title>SAP Manual Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-    }
-
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 15px 20px;
-      text-align: center;
-    }
-
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+    header { background-color: #003366; color: white; padding: 15px 20px; text-align: center; }
     .dashboard {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -26,7 +15,6 @@
       max-width: 1000px;
       margin: auto;
     }
-
     .card {
       background-color: white;
       border-left: 5px solid #0059b3;
@@ -34,93 +22,52 @@
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: 0.2s ease;
+      text-decoration: none;
+      color: black;
     }
-
     .card:hover {
       transform: translateY(-5px);
       background-color: #e6f0ff;
     }
-
-    .dropdown-group {
-      margin-top: 10px;
-      text-align: left;
-    }
-
-    .dropdown-group strong {
-      display: block;
-      margin-top: 8px;
-      color: #0059b3;
-    }
-
-    .dropdown-group ul {
-      list-style: none;
-      padding-left: 15px;
-      margin: 0;
-    }
-
-    .dropdown-group ul li {
-      margin: 3px 0;
-    }
-
-    h1 {
-      margin: 10px 0;
-    }
+    h1 { margin: 10px 0; }
   </style>
 </head>
 <body>
 
   <header>
     <h1>🏠 SAP Manual Home</h1>
-    <p>Choose a process to view step-by-step guidance</p>
+    <p>Select a module to view instructions</p>
   </header>
 
   <div class="dashboard">
-
-    <div class="card" onclick="alert('Navigate to MPV Page')">
+    <a class="card" href="mpv.html">
       <h3>MPV</h3>
-    </div>
+    </a>
 
-    <div class="card" onclick="alert('Navigate to PV Page')">
+    <a class="card" href="#">
       <h3>PV</h3>
-    </div>
+    </a>
 
-    <div class="card" onclick="alert('Navigate to Lodgement Page')">
+    <a class="card" href="#">
       <h3>LODGEMENT</h3>
-    </div>
+    </a>
 
-    <div class="card">
+    <a class="card" href="#">
       <h3>JV</h3>
-      <div class="dropdown-group">
-        <strong>Subcategories:</strong>
-        <ul>
-          <li>Fixed JV</li>
-          <li>Reclass</li>
-          <li>Payroll</li>
-        </ul>
-      </div>
-    </div>
+    </a>
 
-    <div class="card" onclick="alert('Navigate to SD Billing Page')">
+    <a class="card" href="#">
       <h3>SD BILLING</h3>
-    </div>
+    </a>
 
-    <div class="card" onclick="alert('Navigate to Bank Charges Page')">
+    <a class="card" href="#">
       <h3>BANK CHARGES</h3>
-    </div>
+    </a>
 
-    <div class="card">
+    <a class="card" href="#">
       <h3>TAKEN UP INVOICES</h3>
-      <div class="dropdown-group">
-        <strong>Subcategories:</strong>
-        <ul>
-          <li>Invoice Interco</li>
-          <li>Vendor</li>
-          <li>Credit Note</li>
-        </ul>
-      </div>
-    </div>
-
+    </a>
   </div>
 
 </body>
