@@ -32,11 +32,6 @@
     }
     h1 { margin: 10px 0; }
 
-    textarea {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: vertical;
-    }
   </style>
 </head>
 <body>
@@ -55,35 +50,6 @@
       <a class="card" href="bankcharges.html"><h3>BANK CHARGES</h3></a>
       <a class="card" href="invoices.html"><h3>TAKEN UP INVOICES</h3></a>
   </div>
-
-  <div class="step">
-  <div class="step-title">📝 Your Notes</div>
-  <textarea id="noteBox" placeholder="Write your notes here..." style="width:100%; height:150px; padding:10px; font-family:Arial;"></textarea>
-  <br><br>
-  <button onclick="saveNote()" style="padding:10px 15px; background-color:#0059b3; color:white; border:none; border-radius:5px;">💾 Save Note</button>
-  <div id="saveMsg" style="margin-top:10px; color:green;"></div>
-</div>
-
-<script>
-  const noteKey = location.pathname.split("/").pop().replace(".html", "") + "_note";
-
-  function saveNote() {
-    const note = document.getElementById("noteBox").value;
-    localStorage.setItem(noteKey, note);
-    document.getElementById("saveMsg").textContent = "Note saved!";
-    setTimeout(() => document.getElementById("saveMsg").textContent = "", 2000);
-  }
-
-  function loadNote() {
-    const saved = localStorage.getItem(noteKey);
-    if (saved) {
-      document.getElementById("noteBox").value = saved;
-    }
-  }
-
-  window.onload = loadNote;
-</script>
-
-
+  
 </body>
 </html>
