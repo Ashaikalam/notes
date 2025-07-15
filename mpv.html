@@ -36,43 +36,101 @@
     .back-link:hover {
       background-color: #d0d0d0;
     }
+    select {
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .gl-display {
+      font-weight: bold;
+      color: #d9534f;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
 
-  <a href="index.html" class="back-link">← Back to Home</a>
+<a href="index.html" class="back-link">← Back to Home</a>
 
-  <h1>Manual Payment Voucher (MPV) – SAP T-code F-53</h1>
+<h1>Manual Payment Voucher (MPV) – SAP T-code F-53</h1>
 
-  <div class="step"><div class="step-title">Step 1: Access T-code F-53</div>
-    <p>Go to SAP menu → Click MPV or type <strong>F-53</strong>.</p></div>
+<div class="step">
+  <div class="step-title">Step 1: Access T-code F-53</div>
+  <p>Go to SAP menu → Click MPV or type <strong>F-53</strong>.</p>
+</div>
 
-  <div class="step"><div class="step-title">Step 2: Company Code & Currency</div>
-    <p>Enter Company Code and Currency.</p></div>
+<div class="step">
+  <div class="step-title">Step 2: Company Code & Currency</div>
+  <p>Select Company Code and enter Currency.</p>
+  <label for="companyCode">Company Code:</label>
+  <select id="companyCode" onchange="updateGL()">
+    <option value="">-- Select --</option>
+    <option value="M002">M002</option>
+    <option value="M029">M029</option>
+    <option value="M026">M026</option>
+  </select>
+</div>
 
-  <div class="step"><div class="step-title">Step 3: Document & Posting Date</div>
-    <p>Enter same date as your bank statement.</p></div>
+<div class="step">
+  <div class="step-title">Step 3: Document & Posting Date</div>
+  <p>Enter same date as your bank statement.</p>
+</div>
 
-  <div class="step"><div class="step-title">Step 4: Select Bank Account</div>
-    <p>Choose Bank GL Account (e.g., 110100).</p></div>
+<div class="step">
+  <div class="step-title">Step 4: Select Bank Account</div>
+  <p>Choose Bank G/L Account:</p>
+  <div id="glDisplay" class="gl-display">Please select a Company Code above.</div>
+</div>
 
-  <div class="step"><div class="step-title">Step 5: Enter Amount</div>
-    <p>Enter the total payment amount.</p></div>
+<div class="step">
+  <div class="step-title">Step 5: Enter Amount</div>
+  <p>Enter the total payment amount.</p>
+</div>
 
-  <div class="step"><div class="step-title">Step 6: Process Open Items</div>
-    <p>Click 'Process Open Items' and tick invoices to clear.</p></div>
+<div class="step"><div class="step-title">Step 6: Process Open Items</div>
+  <p>Click 'Process Open Items' and tick invoices to clear.</p>
+</div>
 
-  <div class="step"><div class="step-title">Step 7: Reference & Text</div>
-    <p>Fill in Reference, Cheque No, Remarks.</p></div>
+<div class="step"><div class="step-title">Step 7: Reference & Text</div>
+  <p>Fill in Reference, Cheque No, Remarks.</p>
+</div>
 
-  <div class="step"><div class="step-title">Step 8: Simulate</div>
-    <p>Check entry preview. Confirm Debit = Credit.</p></div>
+<div class="step"><div class="step-title">Step 8: Simulate</div>
+  <p>Check entry preview. Confirm Debit = Credit.</p>
+</div>
 
-  <div class="step"><div class="step-title">Step 9: Post</div>
-    <p>Click Post. Note down the document number.</p></div>
+<div class="step"><div class="step-title">Step 9: Post</div>
+  <p>Click Post. Note down the document number.</p>
+</div>
 
-  <div class="step"><div class="step-title">Step 10: View or Print</div>
-    <p>Use <strong>FB03</strong> to view the document or print it.</p></div>
+<div class="step"><div class="step-title">Step 10: View or Print</div>
+  <p>Use <strong>FB03</strong> to view the document or print it.</p>
+</div>
+
+<script>
+  function updateGL() {
+    const code = document.getElementById("companyCode").value;
+    const glDisplay = document.getElementById("glDisplay");
+    let glAccount = "";
+
+    switch (code) {
+      case "M002":
+        glAccount = "2040900031";
+        break;
+      case "M029":
+        glAccount = "2040900282";
+        break;
+      case "M026":
+        glAccount = "204090051";
+        break;
+      default:
+        glAccount = "";
+    }
+
+    glDisplay.innerHTML = glAccount
+      ? `Selected G/L Account: <strong>${glAccount}</strong>`
+      : "Please select a Company Code above.";
+  }
+</script>
 
 </body>
 </html>
