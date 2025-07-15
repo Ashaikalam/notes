@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Outgoing Payments: Header Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #e5ebf1;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 800px;
+            margin: 0 auto;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-row {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .form-row label {
+            flex: 0 0 200px;
+            font-weight: bold;
+        }
+        .form-row input, .form-row select {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #999;
+            background-color: #fff;
+        }
+        .sub-section {
+            background-color: #d9e3ec;
+            padding: 10px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+        .sub-section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .two-columns {
+            display: flex;
+            gap: 20px;
+        }
+        .two-columns > div {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Post Outgoing Payments: Header Data</h2>
+
+        <div class="form-row">
+            <label>Document Date</label>
+            <input type="date" value="2025-06-09">
+            <label>Type</label>
+            <input type="text" value="ZV" size="5">
+            <label>Company Code</label>
+            <input type="text" value="M002" size="5">
+        </div>
+        <div class="form-row">
+            <label>Posting Date</label>
+            <input type="date" value="2025-06-09">
+            <label>Period</label>
+            <input type="text" value="6" size="5">
+            <label>Currency/Rate</label>
+            <input type="text" value="MYR" size="5">
+        </div>
+        <div class="form-row">
+            <label>Document Number</label>
+            <input type="text">
+            <label>Translation Date</label>
+            <input type="date">
+        </div>
+        <div class="form-row">
+            <label>Reference</label>
+            <input type="text" value="FPX">
+            <label>Trading Part.</label>
+            <input type="text" value="BA">
+        </div>
+        <div class="form-row">
+            <label>Doc.Header Text</label>
+            <input type="text" value="LEMBAGA HASIL DALAM NEGERI MALAYSIA">
+        </div>
+        <div class="form-row">
+            <label>Clearing Text</label>
+            <input type="text" value="LEMBAGA HASIL DALAM NEGERI MALAYSIA">
+        </div>
+
+        <div class="sub-section">
+            <div class="sub-section-title">Bank Data</div>
+            <div class="two-columns">
+                <div>
+                    <div class="form-row">
+                        <label>Bank Account</label>
+                        <input type="text" value="2090505032">
+                    </div>
+                    <div class="form-row">
+                        <label>Amount</label>
+                        <input type="text" value="516.6">
+                    </div>
+                    <div class="form-row">
+                        <label>Bank Charges</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-row">
+                        <label>Value Date</label>
+                        <input type="date" value="2025-06-09">
+                    </div>
+                    <div class="form-row">
+                        <label>Text</label>
+                        <input type="text" value="LEMBAGA HASIL DALAM NEGERI MALAYSIA">
+                    </div>
+                </div>
+                <div>
+                    <div class="form-row">
+                        <label>Business Area</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-row">
+                        <label>LC Bank Charges</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-row">
+                        <label>Profit Center</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-row">
+                        <label>Assignment</label>
+                        <input type="text" value="FPX">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-section">
+            <div class="sub-section-title">Open Item Selection</div>
+            <div class="two-columns">
+                <div>
+                    <div class="form-row">
+                        <label>Account</label>
+                        <input type="text" value="3032100000">
+                    </div>
+                    <div class="form-row">
+                        <label>Account Type</label>
+                        <input type="text" value="S">
+                    </div>
+                    <div class="form-row">
+                        <label>Special G/L Ind.</label>
+                        <input type="text" value="P">
+                    </div>
+                    <div class="form-row">
+                        <label><input type="checkbox" checked> Standard OIs</label>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-row">
+                        <label>Additional Selections</label>
+                        <select>
+                            <option value="none" selected>None</option>
+                            <option>Amount</option>
+                            <option>Profit Center</option>
+                            <option>Document Number</option>
+                            <option>Posting Date</option>
+                            <option>Others</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
